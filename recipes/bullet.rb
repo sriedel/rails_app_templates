@@ -2,7 +2,8 @@
 # Bullet
 #
 say "Install bullet"
-gem "bullet", :group => "development"
+gem "bullet", "= 2.0.0.beta.2", :group => "development"
+run "bundle install"
 inject_into_file File.join( %W( config environments development.rb ) ),
                  :before => %r{^end$} do
 %{
