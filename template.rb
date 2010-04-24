@@ -1,7 +1,14 @@
 require 'active_support/core_ext/array/wrap' # Otherwise #environment cries
 
-RECIPE_PATH = File.dirname( rails_template )
+RECIPE_FILE_PATH = File.join( File.dirname( rails_template ), "recipes" )
+RECIPE_HTTP_PATH = "http://github.com/sriedel/rails_app_templates/raw/master/recipes"
+
 RECIPES_TO_APPLY = %w{ rspec cucumber jquery devise bullet capistrano }
+
+# Use recipes on the local filesystem
+recipe_path = RECIPE_FILE_PATH
+# If you want to get the recipes via HTTP, use this instead of the above:
+# recipe_path = RECIPE_HTTP_PATH 
 
 
 #
@@ -13,8 +20,7 @@ git :commit => "-m 'initial bare rails project tree'"
 
 
 RECIPES_TO_APPLY.each do |recipe|
-  recipe_file = File.join( "recipes", "#{recipe}.rb" )
-  apply File.join( RECIPE_PATH, recipe_file )
+  apply File.join( recipe_path, "#{recipe}.rb" )
 end
 
 # 
