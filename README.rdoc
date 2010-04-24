@@ -1,0 +1,10 @@
+= Rails3 Application Templates
+
+A repository for rails 3 application templates, split into componentes for
+easy mixing and matching of your requirements.
+
+= Usage
+ * Clone the repository
+ * Edit the template.rb file to fit your needs
+ * Generate a Rails 3 template with ''rails my_app -m path/to/template.rb''
+
