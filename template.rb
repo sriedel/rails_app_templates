@@ -13,7 +13,7 @@ git :commit => "-m 'initial bare rails project tree'"
 
 
 RECIPES_TO_APPLY.each do |recipe|
-  recipe_file = "#{recipe}.rb"
+  recipe_file = File.join( "recipes", "#{recipe}.rb" )
   apply File.join( RECIPE_PATH, recipe_file )
 end
 
